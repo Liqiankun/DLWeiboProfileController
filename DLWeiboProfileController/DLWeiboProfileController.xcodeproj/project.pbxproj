@@ -330,7 +330,7 @@
 				TargetAttributes = {
 					AAC36D061E99C9D40058C627 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = LN7UHJEGQE;
+						DevelopmentTeam = 27XVM2QM7Z;
 						ProvisioningStyle = Automatic;
 					};
 					AAC36D1F1E99C9D40058C627 = {
@@ -603,7 +603,7 @@
 			baseConfigurationReference = E0D2A0D60E5DBC27B24420B3 /* Pods-DLWeiboProfileController.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LN7UHJEGQE;
+				DEVELOPMENT_TEAM = 27XVM2QM7Z;
 				INFOPLIST_FILE = DLWeiboProfileController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = davidlee.DLWeiboProfileController;
@@ -616,7 +616,7 @@
 			baseConfigurationReference = A4E57446900B417E14525449 /* Pods-DLWeiboProfileController.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LN7UHJEGQE;
+				DEVELOPMENT_TEAM = 27XVM2QM7Z;
 				INFOPLIST_FILE = DLWeiboProfileController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = davidlee.DLWeiboProfileController;
