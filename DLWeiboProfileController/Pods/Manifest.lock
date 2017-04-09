@@ -1,0 +1,18 @@
+PODS:
+  - FDFullscreenPopGesture (1.1)
+  - Masonry (1.0.2)
+  - YUSegment (0.2.0)
+
+DEPENDENCIES:
+  - FDFullscreenPopGesture (= 1.1)
+  - Masonry
+  - YUSegment
+
+SPEC CHECKSUMS:
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  YUSegment: a1fa1237dfd5e6cbca28ca3b1eeac1151d0fb3b5
+
+PODFILE CHECKSUM: 948dec0f83f4fcfa99dbe08b57bba12d3c5b2f62
+
+COCOAPODS: 1.2.0
