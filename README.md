@@ -1,2 +1,1 @@
-# DLWeiboProfileController
-Weibo user profile page
+![](https://github.com/Liqiankun/DLWeiboProfileController/raw/master/DLWeiboProfileController.gif)
