@@ -100,9 +100,9 @@
 }
 
 //用于让pageView到边缘时不让滑动一段距离的问题
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    scrollView.bounces = NO;
-//}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    scrollView.bounces = NO;
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

@@ -111,13 +111,13 @@
 
 //当滑动下面的PageView时，当前要禁止滑动
 - (void)onScrollBottomView:(NSNotification *)ntf {
-//    if ([ntf.object isEqualToString:@"ended"]) {
-//        //bottomView停止滑动了  当前页可以滑动
-//        self.tableView.scrollEnabled = YES;
-//    } else {
-//        //bottomView滑动了 当前页就禁止滑动
-//        self.tableView.scrollEnabled = NO;
-//    }
+    if ([ntf.object isEqualToString:@"ended"]) {
+        //bottomView停止滑动了  当前页可以滑动
+        self.tableView.scrollEnabled = YES;
+    } else {
+        //bottomView滑动了 当前页就禁止滑动
+        self.tableView.scrollEnabled = NO;
+    }
 }
 
 //监听segment的变化
@@ -126,6 +126,8 @@
     self.contentCell.selectIndex = self.segment.selectedIndex;
 }
 
+
+#pragma mark - UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
