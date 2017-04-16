@@ -24,12 +24,15 @@
     return [[[NSBundle mainBundle] loadNibNamed:@"DLUserHeaderView" owner:nil options:nil] firstObject];
 }
 
-
-- (IBAction)buttonAction:(id)sender {
-    
+- (IBAction)tapOnImageView:(id)sender {
     if (self.delegate && [self.delegate respondsToSelector:@selector(userHeaderViewButtonDidClick:)]) {
         [self.delegate userHeaderViewButtonDidClick:self];
     }
+}
+
+- (IBAction)buttonAction:(id)sender {
+    
+  
 }
 
 @end

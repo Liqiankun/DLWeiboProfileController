@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -43,7 +44,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSd-Ow-VpT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-98" y="-26"/>
+            <point key="canvasLocation" x="-158" y="-66"/>
         </scene>
         <!--Personal Center Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -82,12 +83,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="855" y="-25"/>
+            <point key="canvasLocation" x="738" y="-24"/>
         </scene>
-        <!--View Controller-->
+        <!--Choose Wall Paper Controller-->
         <scene sceneID="DXJ-pj-ddP">
             <objects>
-                <viewController id="qS8-fE-lyf" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="wallPaperController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qS8-fE-lyf" customClass="DLChooseWallPaperController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CRJ-nJ-CMg"/>
                         <viewControllerLayoutGuide type="bottom" id="XuH-Qh-zsP"/>
@@ -96,40 +97,89 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4HY-ny-3pi" customClass="DLWallPaperView">
-                                <rect key="frame" x="10" y="56" width="155" height="116"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vOa-c5-EFc" customClass="DLWallPaperView">
-                                        <rect key="frame" x="8" y="0.0" width="155" height="116"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQk-UY-raw">
+                                <rect key="frame" x="15" y="15" width="165" height="123"/>
                                 <constraints>
-                                    <constraint firstItem="vOa-c5-EFc" firstAttribute="top" secondItem="4HY-ny-3pi" secondAttribute="top" id="BB3-zh-eKm"/>
-                                    <constraint firstAttribute="trailing" secondItem="vOa-c5-EFc" secondAttribute="trailing" constant="20" id="Ba4-vT-Df7"/>
-                                    <constraint firstItem="vOa-c5-EFc" firstAttribute="leading" secondItem="4HY-ny-3pi" secondAttribute="leading" constant="20" id="kl3-sf-Kap"/>
+                                    <constraint firstAttribute="width" secondItem="DQk-UY-raw" secondAttribute="height" multiplier="55:41" id="fwo-Sl-wQd"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E3J-K0-WQe" customClass="DLWallPaperView">
-                                <rect key="frame" x="181" y="56" width="155" height="116"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vqD-nh-73Q" customClass="DLWallPaperView">
-                                        <rect key="frame" x="23" y="0.0" width="155" height="116"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                                <state key="normal" backgroundImage="wallPaper1"/>
+                                <connections>
+                                    <action selector="buttonAction:" destination="qS8-fE-lyf" eventType="touchUpInside" id="Pux-i6-zyT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppP-YD-pwS">
+                                <rect key="frame" x="195" y="15" width="165" height="123"/>
+                                <state key="normal" backgroundImage="wallPaper2"/>
+                                <connections>
+                                    <action selector="buttonAction:" destination="qS8-fE-lyf" eventType="touchUpInside" id="Dze-Jy-uSq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3p-bu-3wv">
+                                <rect key="frame" x="15" y="153" width="165" height="123"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="t3p-bu-3wv" secondAttribute="height" multiplier="55:41" id="a2x-Go-CMY"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="wallPaper3"/>
+                                <connections>
+                                    <action selector="buttonAction:" destination="qS8-fE-lyf" eventType="touchUpInside" id="vWb-wM-55d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5u-4z-cH1">
+                                <rect key="frame" x="195" y="153" width="165" height="123"/>
+                                <state key="normal" backgroundImage="wallPaper4"/>
+                                <connections>
+                                    <action selector="buttonAction:" destination="qS8-fE-lyf" eventType="touchUpInside" id="Njc-e6-xO5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ars-3v-4hy">
+                                <rect key="frame" x="15" y="291" width="165" height="123"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ars-3v-4hy" secondAttribute="height" multiplier="55:41" id="9ON-Ee-n8H"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="wallPaper5"/>
+                                <connections>
+                                    <action selector="buttonAction:" destination="qS8-fE-lyf" eventType="touchUpInside" id="bes-Mb-Pxq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QmO-5N-Ftx">
+                                <rect key="frame" x="195" y="291" width="165" height="123"/>
+                                <state key="normal" backgroundImage="wallPaper6"/>
+                                <connections>
+                                    <action selector="buttonAction:" destination="qS8-fE-lyf" eventType="touchUpInside" id="Sge-ye-bT1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QmO-5N-Ftx" firstAttribute="top" secondItem="U5u-4z-cH1" secondAttribute="bottom" constant="15" id="1Qw-PG-h9q"/>
+                            <constraint firstItem="t3p-bu-3wv" firstAttribute="top" secondItem="DQk-UY-raw" secondAttribute="bottom" constant="15" id="4MZ-Fq-sQV"/>
+                            <constraint firstItem="DQk-UY-raw" firstAttribute="width" secondItem="ppP-YD-pwS" secondAttribute="width" id="9Lu-xv-ZAh"/>
+                            <constraint firstItem="ppP-YD-pwS" firstAttribute="centerY" secondItem="DQk-UY-raw" secondAttribute="centerY" id="A1t-uF-GQN"/>
+                            <constraint firstItem="QmO-5N-Ftx" firstAttribute="leading" secondItem="Ars-3v-4hy" secondAttribute="trailing" constant="15" id="Csw-7g-mBd"/>
+                            <constraint firstAttribute="trailing" secondItem="ppP-YD-pwS" secondAttribute="trailing" constant="15" id="E69-9F-vjf"/>
+                            <constraint firstAttribute="trailing" secondItem="QmO-5N-Ftx" secondAttribute="trailing" constant="15" id="HXx-fF-kak"/>
+                            <constraint firstItem="DQk-UY-raw" firstAttribute="height" secondItem="ppP-YD-pwS" secondAttribute="height" id="Hef-bi-e3b"/>
+                            <constraint firstItem="Ars-3v-4hy" firstAttribute="height" secondItem="QmO-5N-Ftx" secondAttribute="height" id="Heo-al-ySW"/>
+                            <constraint firstItem="Ars-3v-4hy" firstAttribute="width" secondItem="QmO-5N-Ftx" secondAttribute="width" id="KJL-LE-XQD"/>
+                            <constraint firstItem="U5u-4z-cH1" firstAttribute="leading" secondItem="t3p-bu-3wv" secondAttribute="trailing" constant="15" id="Pah-eq-pYh"/>
+                            <constraint firstItem="t3p-bu-3wv" firstAttribute="width" secondItem="U5u-4z-cH1" secondAttribute="width" id="Qvo-1S-x2G"/>
+                            <constraint firstItem="U5u-4z-cH1" firstAttribute="top" secondItem="ppP-YD-pwS" secondAttribute="bottom" constant="15" id="S45-O9-ixF"/>
+                            <constraint firstItem="Ars-3v-4hy" firstAttribute="top" secondItem="t3p-bu-3wv" secondAttribute="bottom" constant="15" id="UFX-jY-WAa"/>
+                            <constraint firstItem="t3p-bu-3wv" firstAttribute="leading" secondItem="3vD-7h-3cr" secondAttribute="leading" constant="15" id="Vco-g5-fQ4"/>
+                            <constraint firstItem="ppP-YD-pwS" firstAttribute="leading" secondItem="DQk-UY-raw" secondAttribute="trailing" constant="15" id="Yzh-og-8FR"/>
+                            <constraint firstItem="DQk-UY-raw" firstAttribute="top" secondItem="CRJ-nJ-CMg" secondAttribute="bottom" constant="15" id="Zyu-IB-Maz"/>
+                            <constraint firstItem="DQk-UY-raw" firstAttribute="leading" secondItem="3vD-7h-3cr" secondAttribute="leading" constant="15" id="bKL-HF-XnA"/>
+                            <constraint firstItem="Ars-3v-4hy" firstAttribute="leading" secondItem="3vD-7h-3cr" secondAttribute="leading" constant="15" id="gd0-OL-bdP"/>
+                            <constraint firstItem="t3p-bu-3wv" firstAttribute="height" secondItem="U5u-4z-cH1" secondAttribute="height" id="y2K-Jo-j27"/>
+                            <constraint firstAttribute="trailing" secondItem="U5u-4z-cH1" secondAttribute="trailing" constant="15" id="z7a-Jr-gEJ"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Wrg-qa-rMN"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hg-eF-Etw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1542" y="-56"/>
+            <point key="canvasLocation" x="1554" y="-43"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6en-VW-SzP">
@@ -150,4 +200,12 @@
             <point key="canvasLocation" x="-1234.4000000000001" y="-17.541229385307346"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="wallPaper1" width="600" height="400"/>
+        <image name="wallPaper2" width="600" height="400"/>
+        <image name="wallPaper3" width="600" height="810"/>
+        <image name="wallPaper4" width="600" height="400"/>
+        <image name="wallPaper5" width="600" height="415"/>
+        <image name="wallPaper6" width="600" height="400"/>
+    </resources>
 </document>

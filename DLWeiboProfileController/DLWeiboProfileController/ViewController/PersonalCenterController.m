@@ -14,7 +14,8 @@
 #import "DLUserPageNavBar.h"
 #import "UINavigationController+FDFullscreenPopGesture.h"
 #import "DLUserHeaderView.h"
-@interface PersonalCenterController ()<UITableViewDelegate, UITableViewDataSource,DLUserPageNavBarDelegate,ContentViewCellDelegate>
+#import "DLChooseWallPaperController.h"
+@interface PersonalCenterController ()<UITableViewDelegate, UITableViewDataSource,DLUserPageNavBarDelegate,ContentViewCellDelegate,DLUserHeaderViewDelegate,DLChooseWallPaperControllerDelegate>
 //tableView
 @property (strong, nonatomic) IBOutlet PersonalCenterTableView *tableView;
 //下拉头部放大控件
@@ -33,6 +34,7 @@
 @property(nonatomic,assign)NSInteger lastContentOffY;
 //是否在刷新
 @property(nonatomic,assign)BOOL isRefreshing;
+@property(nonatomic,strong)DLUserHeaderView *userHeaderView;
 
 @end
 
@@ -87,10 +89,11 @@
     self.tableView.showsVerticalScrollIndicator = NO;
     [ContentViewCell regisCellForTableView:self.tableView];
     
-    DLUserHeaderView *headerView = [DLUserHeaderView userHeaderView];
-    headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH  / 1.34 );
+    self.userHeaderView = [DLUserHeaderView userHeaderView];
+    self.userHeaderView.delegate = self;
+    self.userHeaderView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH  / 1.34 );
     _stretchableTableHeaderView = [HFStretchableTableHeaderView new];
-    [_stretchableTableHeaderView stretchHeaderForTableView:self.tableView withView:headerView];
+    [_stretchableTableHeaderView stretchHeaderForTableView:self.tableView withView:self.userHeaderView];
 }
 
 -(void)dl_addNotification
@@ -246,6 +249,19 @@
 {
     [self.userPageNavBar dl_endRefresh];
     self.isRefreshing = NO;
+}
+
+#pragma mark - DLUserHeaderViewDelegate
+-(void)userHeaderViewButtonDidClick:(DLUserHeaderView *)headerView
+{
+    DLChooseWallPaperController *wallPaperVC = [[DLChooseWallPaperController alloc] init];
+    wallPaperVC.delegate = self;
+    [self.navigationController pushViewController:wallPaperVC animated:YES];
+}
+
+-(void)wallPageDidChooseWallPager:(UIImage *)image
+{
+    self.userHeaderView.userImageView.image = image;
 }
 
 //下拉放大必须实现

@@ -15,9 +15,13 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallPaper3" translatesAutoresizingMaskIntoConstraints="NO" id="7Nq-Pz-OQm">
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallPaper3" translatesAutoresizingMaskIntoConstraints="NO" id="7Nq-Pz-OQm">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="YLf-gL-Ox2" appends="YES" id="6wd-Te-lWr"/>
+                    </connections>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRg-Oe-ccu">
                     <rect key="frame" x="0.0" y="168" width="375" height="112"/>
@@ -76,6 +80,11 @@
             </connections>
             <point key="canvasLocation" x="199" y="-187"/>
         </view>
+        <tapGestureRecognizer id="YLf-gL-Ox2">
+            <connections>
+                <action selector="tapOnImageView:" destination="iN0-l3-epB" id="mWe-87-2zV"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="wallPaper3" width="600" height="810"/>
