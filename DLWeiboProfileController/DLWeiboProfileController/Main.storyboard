@@ -109,7 +109,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppP-YD-pwS">
                                 <rect key="frame" x="195" y="15" width="165" height="123"/>
-                                <state key="normal" backgroundImage="wallPaper2"/>
+                                <state key="normal" backgroundImage="wallPager2"/>
                                 <connections>
                                     <action selector="buttonAction:" destination="qS8-fE-lyf" eventType="touchUpInside" id="Dze-Jy-uSq"/>
                                 </connections>
@@ -201,8 +201,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="wallPager2" width="600" height="401"/>
         <image name="wallPaper1" width="600" height="400"/>
-        <image name="wallPaper2" width="600" height="400"/>
         <image name="wallPaper3" width="600" height="810"/>
         <image name="wallPaper4" width="600" height="400"/>
         <image name="wallPaper5" width="600" height="415"/>

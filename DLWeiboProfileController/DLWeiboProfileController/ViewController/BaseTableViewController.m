@@ -32,7 +32,7 @@
 {
     if (!self.isRefreshing) {
         self.isRefreshing = YES;
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             if (self.delegate && [self.delegate respondsToSelector:@selector(dl_viewControllerDidFinishRefreshing:)]) {
                 [self.delegate dl_viewControllerDidFinishRefreshing:self];
                 self.isRefreshing = NO;
