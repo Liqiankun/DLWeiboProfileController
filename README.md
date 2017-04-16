@@ -6,6 +6,7 @@ One profile page copies weibo user profile page. Based on [PersonalHomePageDemo]
 - [x] Gradual NavigationBar
 - [x] Pull down to refresh data
 - [x] Manage some ViewControllers
+- [x] Change Cover
 ## Lib
 [YUSegment](https://github.com/afishhhhh/YUSegment). Switch the tab.<br>
 [FDFullscreenPopGesture](https://github.com/forkingdog/FDFullscreenPopGesture).Hide NavigationBar.<br>
