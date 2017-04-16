@@ -182,12 +182,6 @@
     CGFloat alpha = (offset - minAlphaOffset) / (maxAlphaOffset - minAlphaOffset);
     self.userPageNavBar.dl_alpha = alpha;
 
-    //根据导航栏透明度设置title
-    if (alpha > 0.5) {
-        self.title = @"name";
-    } else {
-        self.title = @"";
-    }
 
     //子控制器和主控制器之间的滑动状态切换
     CGFloat tabOffsetY = [_tableView rectForSection:0].origin.y-64;
