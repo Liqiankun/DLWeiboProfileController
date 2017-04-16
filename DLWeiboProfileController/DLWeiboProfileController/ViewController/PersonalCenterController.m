@@ -14,7 +14,7 @@
 #import "DLUserPageNavBar.h"
 #import "UINavigationController+FDFullscreenPopGesture.h"
 #import "DLUserHeaderView.h"
-@interface PersonalCenterController ()<UITableViewDelegate, UITableViewDataSource,DLUserPageNavBarDelegate>
+@interface PersonalCenterController ()<UITableViewDelegate, UITableViewDataSource,DLUserPageNavBarDelegate,ContentViewCellDelegate>
 //tableView
 @property (strong, nonatomic) IBOutlet PersonalCenterTableView *tableView;
 //下拉头部放大控件
@@ -27,6 +27,12 @@
 @property (strong, nonatomic) ContentViewCell *contentCell;
 //导航栏的背景view
 @property (strong, nonatomic) DLUserPageNavBar *userPageNavBar;
+//是否应该刷新
+@property(nonatomic,assign)BOOL shouldRefresh;
+//偏移量
+@property(nonatomic,assign)NSInteger lastContentOffY;
+//是否在刷新
+@property(nonatomic,assign)BOOL isRefreshing;
 
 @end
 
@@ -154,6 +160,7 @@
     if (!self.contentCell) {
         self.contentCell = [ContentViewCell dequeueCellForTableView:tableView];
         self.contentCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.contentCell.delegate = self;
         [self.contentCell setPageView];
     }
     return self.contentCell;
@@ -193,12 +200,52 @@
             scrollView.contentOffset = CGPointMake(0, tabOffsetY);
         }
     }
+    
+    [self configRefreshStateWithScrollView:scrollView];
+}
+
+-(void)configRefreshStateWithScrollView:(UIScrollView *)scrollView
+{
+    if (scrollView.contentOffset.y <= -64 && scrollView.contentOffset.y < self.lastContentOffY) {
+        self.shouldRefresh = YES;
+    }else{
+        self.shouldRefresh = NO;
+    }
+    
+    if (scrollView.contentOffset.y < 0 && !self.isRefreshing && scrollView.contentOffset.y < self.lastContentOffY && self.lastContentOffY < 0) {
+        if(!self.isRefreshing){
+            [self.userPageNavBar dl_willRefresh];
+        }else{
+            [self.userPageNavBar dl_endRefresh];
+        }
+    }
+        
+    self.lastContentOffY = scrollView.contentOffset.y;
+}
+
+
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (self.shouldRefresh && !self.isRefreshing) {
+        [self.userPageNavBar dl_refresh];
+        [self.contentCell dl_refresh];
+        self.isRefreshing  = YES;
+    }else if(!self.isRefreshing){
+        [self.userPageNavBar dl_endRefresh];
+        self.isRefreshing = NO;
+    }
 }
 
 #pragma mark - DLUserPageNavBarDelegate
 -(void)userPagNavBar:(DLUserPageNavBar *)navBar didClickButton:(DLUserPageButtonType)buttonType
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)dl_contentViewCellDidRecieveFinishRefreshingNotificaiton:(ContentViewCell *)cell
+{
+    [self.userPageNavBar dl_endRefresh];
+    self.isRefreshing = NO;
 }
 
 //下拉放大必须实现

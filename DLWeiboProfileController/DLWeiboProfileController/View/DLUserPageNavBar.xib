@@ -54,6 +54,13 @@
                     </constraints>
                     <state key="normal" image="search"/>
                 </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="2fI-CY-0Ap">
+                    <rect key="frame" x="335" y="29" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="UEy-aa-itp"/>
+                        <constraint firstAttribute="width" constant="20" id="c7P-dV-x1n"/>
+                    </constraints>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
@@ -61,6 +68,8 @@
                 <constraint firstAttribute="bottom" secondItem="FwG-Zq-Fa4" secondAttribute="bottom" constant="14" id="5x5-ba-Uk0"/>
                 <constraint firstItem="KyJ-q3-mv8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="CYa-yM-p0R"/>
                 <constraint firstItem="VqR-mk-uiU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="28" id="E0e-7B-2bH"/>
+                <constraint firstAttribute="trailing" secondItem="2fI-CY-0Ap" secondAttribute="trailing" constant="20" id="GqB-Mw-m3r"/>
+                <constraint firstAttribute="bottom" secondItem="2fI-CY-0Ap" secondAttribute="bottom" constant="15" id="Irl-Gs-VRl"/>
                 <constraint firstItem="FwG-Zq-Fa4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="PEc-sm-WKw"/>
                 <constraint firstItem="HRA-ZP-ezi" firstAttribute="leading" secondItem="KyJ-q3-mv8" secondAttribute="trailing" constant="16" id="RKG-hz-rEb"/>
                 <constraint firstAttribute="bottom" secondItem="KyJ-q3-mv8" secondAttribute="bottom" constant="10" id="RNP-lC-kYv"/>
@@ -69,6 +78,7 @@
                 <constraint firstItem="FwG-Zq-Fa4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="28" id="VBC-Dz-15N"/>
                 <constraint firstAttribute="trailing" secondItem="l9l-Ij-1xe" secondAttribute="trailing" id="Z27-18-Hjn"/>
                 <constraint firstItem="l9l-Ij-1xe" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bCl-SU-g2a"/>
+                <constraint firstItem="2fI-CY-0Ap" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="29" id="eR1-n0-vo2"/>
                 <constraint firstAttribute="trailing" secondItem="HRA-ZP-ezi" secondAttribute="trailing" constant="15" id="gnZ-bf-8xK"/>
                 <constraint firstItem="l9l-Ij-1xe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lfj-LD-jge"/>
                 <constraint firstAttribute="bottom" secondItem="l9l-Ij-1xe" secondAttribute="bottom" id="s0g-EU-uzJ"/>
@@ -78,11 +88,12 @@
             <connections>
                 <outlet property="backButton" destination="FwG-Zq-Fa4" id="wML-2y-GYR"/>
                 <outlet property="backImageView" destination="l9l-Ij-1xe" id="bXo-ae-vQN"/>
+                <outlet property="loadingView" destination="2fI-CY-0Ap" id="0QX-Ma-jKk"/>
                 <outlet property="moreButton" destination="HRA-ZP-ezi" id="8q1-6K-VVd"/>
                 <outlet property="nameLabel" destination="VqR-mk-uiU" id="RhD-m0-L82"/>
                 <outlet property="searchButton" destination="KyJ-q3-mv8" id="gre-C7-Jxt"/>
             </connections>
-            <point key="canvasLocation" x="77" y="-17"/>
+            <point key="canvasLocation" x="-222" y="-27"/>
         </view>
     </objects>
     <resources>

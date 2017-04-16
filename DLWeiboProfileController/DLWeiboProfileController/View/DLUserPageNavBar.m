@@ -12,6 +12,7 @@
 @interface DLUserPageNavBar ()
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingView;
 
 
 @end
@@ -36,13 +37,12 @@
     }
 }
 
-
-
 -(void)awakeFromNib
 {
     [super awakeFromNib];
     self.backButton.tag = DLUserPageBackButton;
     self.nameLabel.hidden = YES;
+    self.loadingView.hidden = YES;
 }
 
 
@@ -56,6 +56,36 @@
     _dl_alpha = dl_alpha;
     self.backImageView.alpha = dl_alpha;
     self.nameLabel.hidden = !(dl_alpha >= 1.0);
+}
+
+
+/**
+ 将要刷新
+ */
+-(void)dl_willRefresh
+{
+    self.moreButton.hidden = YES;
+    self.loadingView.hidden = NO;
+}
+
+/**
+ 刷新
+ */
+-(void)dl_refresh
+{
+    self.moreButton.hidden = YES;
+    self.loadingView.hidden = NO;
+    [self.loadingView startAnimating];
+}
+
+/**
+ 结束刷新
+ */
+-(void)dl_endRefresh
+{
+    self.moreButton.hidden = NO;
+    self.loadingView.hidden = YES;
+    [self.loadingView stopAnimating];
 }
 
 @end

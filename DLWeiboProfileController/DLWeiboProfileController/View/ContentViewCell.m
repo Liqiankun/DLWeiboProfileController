@@ -13,9 +13,9 @@
 #import "PersonalRightViewController.h"
 #import "BaseTableViewController.h"
 
-@interface ContentViewCell ()<UIPageViewControllerDelegate,UIPageViewControllerDataSource,UIScrollViewDelegate>
+@interface ContentViewCell ()<UIPageViewControllerDelegate,UIPageViewControllerDataSource,UIScrollViewDelegate,BaseTableViewControllerDelegate>
 
-@property (strong, nonatomic) NSMutableArray *dataArray;
+@property (strong, nonatomic) NSMutableArray<BaseTableViewController *> *dataArray;
 
 @property (strong, nonatomic) UIPageViewController *pageViewCtrl;
 
@@ -34,9 +34,17 @@
     
 }
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+-(void)dl_refresh
+{
+    [self.dataArray[self.selectIndex] dl_refresh];
+}
+
+#pragma mark - BaseTableViewController
+-(void)dl_viewControllerDidFinishRefreshing:(BaseTableViewController *)viewController
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(dl_contentViewCellDidRecieveFinishRefreshingNotificaiton:)]) {
+        [self.delegate dl_contentViewCellDidRecieveFinishRefreshingNotificaiton:self];
+    }
 }
 
 ///pageView
@@ -51,8 +59,11 @@
     self.pageViewCtrl.delegate = self;
     
     PersonalLeftViewController *ctrl1 = [[PersonalLeftViewController alloc] init];
+    ctrl1.delegate = self;
     PersonalMiddleViewController *ctrl2 = [[PersonalMiddleViewController alloc] init];
+    ctrl2.delegate = self;
     PersonalRightViewController *ctrl3 = [[PersonalRightViewController alloc] init];
+    ctrl3.delegate = self;
     
     self.dataArray = @[ctrl1,ctrl2,ctrl3].mutableCopy;
     

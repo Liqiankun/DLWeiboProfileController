@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pc_bg" translatesAutoresizingMaskIntoConstraints="NO" id="7Nq-Pz-OQm">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallPaper3" translatesAutoresizingMaskIntoConstraints="NO" id="7Nq-Pz-OQm">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
@@ -78,6 +78,6 @@
         </view>
     </objects>
     <resources>
-        <image name="pc_bg" width="600" height="400"/>
+        <image name="wallPaper3" width="600" height="810"/>
     </resources>
 </document>

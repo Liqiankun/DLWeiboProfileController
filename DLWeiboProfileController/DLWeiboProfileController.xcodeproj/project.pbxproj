@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AAB80F7F1EA302D400CD17FD /* DLWallPaperView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB80F7E1EA302D400CD17FD /* DLWallPaperView.m */; };
+		AAB80F811EA303C000CD17FD /* DLWallPaperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAB80F801EA303C000CD17FD /* DLWallPaperView.xib */; };
 		AAC36D0C1E99C9D40058C627 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC36D0B1E99C9D40058C627 /* main.m */; };
 		AAC36D171E99C9D40058C627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAC36D161E99C9D40058C627 /* Assets.xcassets */; };
 		AAC36D1A1E99C9D40058C627 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC36D181E99C9D40058C627 /* LaunchScreen.storyboard */; };
@@ -50,6 +52,9 @@
 /* Begin PBXFileReference section */
 		1418E187A27745EF47E878B5 /* libPods-DLWeiboProfileController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DLWeiboProfileController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4E57446900B417E14525449 /* Pods-DLWeiboProfileController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DLWeiboProfileController.release.xcconfig"; path = "Pods/Target Support Files/Pods-DLWeiboProfileController/Pods-DLWeiboProfileController.release.xcconfig"; sourceTree = "<group>"; };
+		AAB80F7D1EA302D400CD17FD /* DLWallPaperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLWallPaperView.h; sourceTree = "<group>"; };
+		AAB80F7E1EA302D400CD17FD /* DLWallPaperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLWallPaperView.m; sourceTree = "<group>"; };
+		AAB80F801EA303C000CD17FD /* DLWallPaperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLWallPaperView.xib; sourceTree = "<group>"; };
 		AAC36D071E99C9D40058C627 /* DLWeiboProfileController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DLWeiboProfileController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC36D0B1E99C9D40058C627 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AAC36D161E99C9D40058C627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -216,6 +221,9 @@
 				AAC36D4B1E99CBE90058C627 /* DLUserPageNavBar.h */,
 				AAC36D4C1E99CBE90058C627 /* DLUserPageNavBar.m */,
 				AAC36D4D1E99CBE90058C627 /* DLUserPageNavBar.xib */,
+				AAB80F7D1EA302D400CD17FD /* DLWallPaperView.h */,
+				AAB80F7E1EA302D400CD17FD /* DLWallPaperView.m */,
+				AAB80F801EA303C000CD17FD /* DLWallPaperView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -375,6 +383,7 @@
 				AAC36D501E99CBE90058C627 /* DLUserHeaderView.xib in Resources */,
 				AAC36D661E99CC870058C627 /* Main.storyboard in Resources */,
 				AAC36D1A1E99C9D40058C627 /* LaunchScreen.storyboard in Resources */,
+				AAB80F811EA303C000CD17FD /* DLWallPaperView.xib in Resources */,
 				AAC36D521E99CBE90058C627 /* DLUserPageNavBar.xib in Resources */,
 				AAC36D171E99C9D40058C627 /* Assets.xcassets in Resources */,
 			);
@@ -452,6 +461,7 @@
 				AAC36D441E99CB070058C627 /* AppDelegate.m in Sources */,
 				AAC36D641E99CC0F0058C627 /* PersonalRightViewController.m in Sources */,
 				AAC36D0C1E99C9D40058C627 /* main.m in Sources */,
+				AAB80F7F1EA302D400CD17FD /* DLWallPaperView.m in Sources */,
 				AAC36D4E1E99CBE90058C627 /* ContentViewCell.m in Sources */,
 				AAC36D611E99CC0F0058C627 /* PersonalCenterTableView.m in Sources */,
 				AAC36D631E99CC0F0058C627 /* PersonalMiddleViewController.m in Sources */,

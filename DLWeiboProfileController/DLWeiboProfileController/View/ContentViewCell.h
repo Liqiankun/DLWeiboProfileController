@@ -7,6 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ContentViewCell;
+
+@protocol ContentViewCellDelegate <NSObject>
+
+-(void)dl_contentViewCellDidRecieveFinishRefreshingNotificaiton:(ContentViewCell *)cell;
+
+@end
+
 
 @interface ContentViewCell : UITableViewCell
 
@@ -17,8 +25,11 @@
 @property (nonatomic, assign) BOOL canScroll;
 //外部segment点击更改selectIndex,切换页面
 @property (assign, nonatomic) NSInteger selectIndex;
+@property(nonatomic,weak)id<ContentViewCellDelegate> delegate;
 
 //创建pageViewController
 - (void)setPageView;
+
+-(void)dl_refresh;
 
 @end

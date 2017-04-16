@@ -38,4 +38,20 @@ typedef enum : NSUInteger {
 
 @property(nonatomic,assign)CGFloat dl_alpha;
 
+
+/**
+ 将要刷新
+ */
+-(void)dl_willRefresh;
+
+/**
+ 刷新
+ */
+-(void)dl_refresh;
+
+/**
+ 结束刷新
+ */
+-(void)dl_endRefresh;
+
 @end

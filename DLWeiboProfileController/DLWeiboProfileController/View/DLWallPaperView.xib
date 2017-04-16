@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DLWallPaperView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ohf-QP-nch">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="O5e-VK-Yn2" appends="YES" id="E1m-ic-lcV"/>
+                    </connections>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" highlightedImage="check_selected" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pdK-gL-fy1">
+                    <rect key="frame" x="330" y="145" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="8ge-gd-f52"/>
+                        <constraint firstAttribute="height" constant="30" id="bLO-Yu-sif"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Ohf-QP-nch" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="4RS-VT-hvz"/>
+                <constraint firstAttribute="trailing" secondItem="pdK-gL-fy1" secondAttribute="trailing" constant="15" id="7z2-00-OvY"/>
+                <constraint firstAttribute="bottom" secondItem="pdK-gL-fy1" secondAttribute="bottom" constant="15" id="GuU-Xf-vgg"/>
+                <constraint firstAttribute="trailing" secondItem="Ohf-QP-nch" secondAttribute="trailing" id="Yv6-Tm-gyF"/>
+                <constraint firstItem="Ohf-QP-nch" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="r2y-bv-Pfe"/>
+                <constraint firstAttribute="bottom" secondItem="Ohf-QP-nch" secondAttribute="bottom" id="vLo-df-sG9"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-111" y="144"/>
+        </view>
+        <tapGestureRecognizer id="O5e-VK-Yn2"/>
+    </objects>
+    <resources>
+        <image name="check" width="61" height="61"/>
+        <image name="check_selected" width="61" height="61"/>
+    </resources>
+</document>
