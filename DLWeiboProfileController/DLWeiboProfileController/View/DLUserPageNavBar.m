@@ -55,7 +55,7 @@
 {
     _dl_alpha = dl_alpha;
     self.backImageView.alpha = dl_alpha;
-    self.nameLabel.hidden = !(dl_alpha >= 1.0);
+    self.nameLabel.hidden = !(dl_alpha >= 0.99);
 }
 
 

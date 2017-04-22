@@ -91,7 +91,7 @@
     
     self.userHeaderView = [DLUserHeaderView userHeaderView];
     self.userHeaderView.delegate = self;
-    self.userHeaderView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH  / 1.34 );
+    self.userHeaderView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH  / 1.7);
     _stretchableTableHeaderView = [HFStretchableTableHeaderView new];
     [_stretchableTableHeaderView stretchHeaderForTableView:self.tableView withView:self.userHeaderView];
 }
@@ -177,9 +177,10 @@
     
     //计算导航栏的透明度
     CGFloat minAlphaOffset = 0;
-    CGFloat maxAlphaOffset = SCREEN_WIDTH  / 1.34 - 64;
+    CGFloat maxAlphaOffset = SCREEN_WIDTH  / 1.7 - 64;
     CGFloat offset = scrollView.contentOffset.y;
     CGFloat alpha = (offset - minAlphaOffset) / (maxAlphaOffset - minAlphaOffset);
+    NSLog(@"alpha--%f",alpha);
     self.userPageNavBar.dl_alpha = alpha;
 
 

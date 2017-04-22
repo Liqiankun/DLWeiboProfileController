@@ -12,6 +12,7 @@
 
 @interface DLUserHeaderView()
 
+@property (weak, nonatomic) IBOutlet UIImageView *userAvatarImageView;
 
 
 
@@ -22,6 +23,15 @@
 +(DLUserHeaderView *)userHeaderView
 {
     return [[[NSBundle mainBundle] loadNibNamed:@"DLUserHeaderView" owner:nil options:nil] firstObject];
+}
+
+-(void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.userAvatarImageView.layer.cornerRadius = 80 / 2.0;
+    self.userAvatarImageView.layer.borderWidth = 1;
+    self.userAvatarImageView.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.userAvatarImageView.layer.masksToBounds = YES;
 }
 
 - (IBAction)tapOnImageView:(id)sender {
