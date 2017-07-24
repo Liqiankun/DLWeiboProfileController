@@ -62,9 +62,7 @@
     }
     CGFloat offsetY = scrollView.contentOffset.y;
     if (offsetY<0) {
-        if (!self.isTouch) {//当手指离开了，也不允许显示主控制器，这里可以根据实际需求做处理
-            return;
-        }
+
         [[NSNotificationCenter defaultCenter] postNotificationName:@"kLeaveTopNtf" object:@1];
         self.canScroll = NO;
         scrollView.contentOffset = CGPointZero;
