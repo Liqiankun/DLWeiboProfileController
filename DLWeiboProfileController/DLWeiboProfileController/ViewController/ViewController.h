@@ -2,14 +2,12 @@
 //  ViewController.h
 //  DLWeiboProfileController
 //
-//  Created by FT_David on 2017/4/9.
-//  Copyright © 2017年 FT_David. All rights reserved.
+//  Created by David on 2018/9/3.
+//  Copyright © 2018年 FT_David. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
 
-
 @end
-

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "DLTabBarController.h"
 @interface AppDelegate ()
 
 @end
@@ -27,6 +27,12 @@
     UIImage *backButtonImage = [[UIImage imageNamed:@"back_icon"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 25, 0, 0)];
     [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin) forBarMetrics:UIBarMetricsDefault];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = [[DLTabBarController alloc] init];
+    [self.window makeKeyAndVisible];
+    return YES;
     
     return YES;
 }

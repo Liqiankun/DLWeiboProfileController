@@ -17,7 +17,7 @@
 #import "DLChooseWallPaperController.h"
 @interface PersonalCenterController ()<UITableViewDelegate, UITableViewDataSource,DLUserPageNavBarDelegate,ContentViewCellDelegate,DLUserHeaderViewDelegate,DLChooseWallPaperControllerDelegate>
 //tableView
-@property (strong, nonatomic) IBOutlet PersonalCenterTableView *tableView;
+@property (strong, nonatomic) PersonalCenterTableView *tableView;
 //下拉头部放大控件
 @property (strong, nonatomic) HFStretchableTableHeaderView* stretchableTableHeaderView;
 //分段控制器
@@ -80,10 +80,21 @@
 -(void)dl_uiConfig
 {
     self.canScroll = YES;
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"";
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    
     self.fd_prefersNavigationBarHidden = YES;
+    
+    self.tableView = [[PersonalCenterTableView alloc] initWithFrame:self.view.bounds];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
+    
     [self.view addSubview:self.userPageNavBar];
     
     self.tableView.showsVerticalScrollIndicator = NO;
@@ -180,9 +191,8 @@
     CGFloat maxAlphaOffset = SCREEN_WIDTH  / 1.7 - 64;
     CGFloat offset = scrollView.contentOffset.y;
     CGFloat alpha = (offset - minAlphaOffset) / (maxAlphaOffset - minAlphaOffset);
-    NSLog(@"alpha--%f",alpha);
     self.userPageNavBar.dl_alpha = alpha;
-
+    NSLog(@"%f", alpha);
 
     //子控制器和主控制器之间的滑动状态切换
     CGFloat tabOffsetY = [_tableView rectForSection:0].origin.y-64;
