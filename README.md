@@ -18,3 +18,5 @@ One profile page copies weibo user profile page. Based on [PersonalHomePageDemo]
 
 ## Author
 David Lee, qiankunli@yahoo.com
+
+# Working on 2.0
