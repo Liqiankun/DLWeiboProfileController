@@ -1,12 +1,17 @@
 ![](https://github.com/Liqiankun/DLWeiboProfileController/raw/master/DLWeiboProfileController.png)
 One profile page copies weibo user profile page. Based on [PersonalHomePageDemo](https://github.com/hkjin/PersonalHomePageDemo). 
 ![](https://github.com/Liqiankun/DLWeiboProfileController/raw/master/DLWeiboProfileController.gif)
+
+## Todo
+- [ ] Working on 2.0 
+
 ## Feature
 - [x] Stretchable TableHeaderView
 - [x] Gradual NavigationBar
 - [x] Pull down to refresh data
 - [x] Manage some ViewControllers
 - [x] Change Cover
+
 ## Lib
 [YUSegment](https://github.com/afishhhhh/YUSegment). Switch the tab.<br>
 [FDFullscreenPopGesture](https://github.com/forkingdog/FDFullscreenPopGesture).Hide NavigationBar.<br>
@@ -18,5 +23,3 @@ One profile page copies weibo user profile page. Based on [PersonalHomePageDemo]
 
 ## Author
 David Lee, qiankunli@yahoo.com
-
-# Working on 2.0
