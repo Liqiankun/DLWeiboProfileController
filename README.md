@@ -3,7 +3,7 @@ One profile page copies weibo user profile page. Based on [PersonalHomePageDemo]
 ![](https://github.com/Liqiankun/DLWeiboProfileController/raw/master/DLWeiboProfileController.gif)
 
 ## Todo
-- [ ] Working on 2.0 
+- [x] Working on 2.0 
 
 ## Feature
 - [x] Stretchable TableHeaderView
